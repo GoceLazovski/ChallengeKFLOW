@@ -18,4 +18,8 @@ export class PopupComponent implements OnInit {
   close(value: boolean){
     this.closePopup.emit(value);
   }
+
+  submit(){
+    
+  }
 }
