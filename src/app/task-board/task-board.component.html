@@ -1,0 +1,60 @@
+<div class="page">
+        <div class="subnav">
+          <h2>Tasks</h2>
+        </div>
+        <div class="grid-container">
+<div>
+    <table>
+        <tr>
+            <td>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>To do</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let listData of toDo">
+                            <td (click)="openEditPopUp(listData)">{{listData.title}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>In progress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let listData of inProgress">
+                            <td (click)="openEditPopUp(listData)">{{listData.title}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Done</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let listData of done">
+                            <td (click)="openEditPopUp(listData)">{{listData.title}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<button (click)="openPopUp()">
+    Create
+</button>
+</div>
+</div>
+
+<app-popup *ngIf="showPopUp == true" [task]="task" (closePopup)="showPopUp=false"></app-popup>
