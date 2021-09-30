@@ -14,7 +14,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let listData of toDo">
+                        <tr *ngFor="let listData of toDo ">
                             <td (click)="openEditPopUp(listData)">{{listData.title}}</td>
                         </tr>
                     </tbody>
@@ -57,4 +57,4 @@
 </div>
 </div>
 
-<app-popup *ngIf="showPopUp == true" [task]="task" (closePopup)="showPopUp=false"></app-popup>
+<app-popup *ngIf="showPopUp == true" [task]="task" (closePopup)="showPopUp=false" (editTask)="editTask($event)"></app-popup>

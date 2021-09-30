@@ -9,6 +9,7 @@ export class PopupComponent implements OnInit {
 
   @Input() task: any;
   @Output() closePopup = new EventEmitter<boolean>();
+  @Output() editTask = new EventEmitter<object>();
   
   constructor() { }
 
@@ -19,7 +20,12 @@ export class PopupComponent implements OnInit {
     this.closePopup.emit(value);
   }
 
-  submit(){
-    
+  submit(task: any){
+    if(task.title == ""){
+      
+    }
+    else{
+      this.editTask.emit(task);
+    }
   }
 }
